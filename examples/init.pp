@@ -1,0 +1,4 @@
+#
+# smoke tests
+#
+include ::motd
