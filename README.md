@@ -1,1 +1,1 @@
-# puppet-motd
+# Puppet motd module
