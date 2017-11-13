@@ -1,14 +1,14 @@
 require 'spec_helper'
 
 describe 'motd', type: :class do
-  on_supported_os.each do |os, facts|
-    context "on #{os}" do
-      let(:facts) do
-        facts
-      end
 
-      it { is_expected.to compile.with_all_deps }
-      it { is_expected.to contain_class('motd') }
+  shared_examples 'working motd class' do
+    it { is_expected.to compile }
+    on_supported_os.each do |os, facts|
+      context "on #{os}" do
+        let(:facts) { facts }
+        it_behaves_like 'working motd class'
+      end
     end
   end
 end
