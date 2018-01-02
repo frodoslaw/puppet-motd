@@ -1,5 +1,11 @@
 # == Class: motd
 #
 class motd {
-  # resources
+  file { '/etc/motd':
+    ensure  => 'file',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0440',
+    content => template('motd/motd.erb'),
+  }
 }
