@@ -1,14 +1,19 @@
-require 'spec_helper'
+require 'spec_helper_puppet'
 
 describe 'motd', type: :class do
-
-  shared_examples 'working motd class' do
-    it { is_expected.to compile }
-    on_supported_os.each do |os, facts|
-      context "on #{os}" do
-        let(:facts) { facts }
-        it_behaves_like 'working motd class'
-      end
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) { facts }
+      it { is_expected.to compile }
+      it { is_expected.to contain_class('motd') }
+      it {
+        is_expected.to contain_file('/etc/motd').with(
+          ensure: 'file',
+          owner:  'root',
+          group:  'root',
+          mode:   '0440'
+        )
+      }
     end
   end
 end
