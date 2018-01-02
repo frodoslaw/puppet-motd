@@ -4,6 +4,14 @@ end
 
 if gem_present 'simplecov'
   require 'simplecov'
+  require 'codacy-coverage'
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+    [
+      ENV['CODACY_RUN_LOCAL'] = 'true',
+      SimpleCov::Formatter::HTMLFormatter,
+      Codacy::Formatter
+    ]
+  )
   SimpleCov.start do
     add_filter '/spec/'
     add_filter '/.vendor/'
