@@ -66,6 +66,8 @@ GEM
       specinfra (~> 2)
     builder (3.2.3)
     byebug (9.0.6)
+    codacy-coverage (1.1.8)
+      simplecov
     coderay (1.1.1)
     declarative (0.0.9)
     declarative-option (0.1.0)
@@ -89,6 +91,7 @@ GEM
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     fast_gettext (1.1.0)
+    ffi (1.9.18)
     ffi (1.9.18-x64-mingw32)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -519,6 +522,7 @@ DEPENDENCIES
   beaker-hostgenerator
   beaker-pe
   beaker-rspec
+  codacy-coverage
   metadata-json-lint
   pry
   pry-byebug
@@ -538,4 +542,4 @@ DEPENDENCIES
   vagrant-wrapper
 
 BUNDLED WITH
-   1.16.0
+   1.16.2
