@@ -1,9 +1,7 @@
 source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
 SUPPORTED_RUBIES = [
-  '~> 2.1.8',
-  '~> 2.3.0',
-  '~> 2.4.0'
+  '~> 2.1.8'
 ].freeze
 
 # Used for gem conditionals, ugly code here :-P
